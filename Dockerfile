@@ -1,16 +1,21 @@
-FROM centos:7
+FROM rockylinux:8.5
 
 
 MAINTAINER zangchanglong
 
 
-RUN mkdir /tmp/thinkboxsetup/
+RUN mkdir /tmp/thinkboxsetup/ &&\
+    sed -e 's|^mirrorlist=|#mirrorlist=|g' \
+    -e 's|^#baseurl=http://dl.rockylinux.org/$contentdir|baseurl=https://mirrors.nju.edu.cn/rocky|g' \
+    -i.bak \
+    /etc/yum.repos.d/Rocky-*.repo &&\
+    dnf makecache
 
 
 COPY ./DeadlineClient-10.*-linux-x64-installer.run /tmp/thinkboxsetup/
 
 
-RUN yum install -y redhat-lsb libx11  libXext mesa-libGL && \
+RUN dnf install -y redhat-lsb libx11  libXext mesa-libGL && \
     chmod +x /tmp/thinkboxsetup/DeadlineClient-10.*-linux-x64-installer.run && \
     /tmp/thinkboxsetup/DeadlineClient-10.*-linux-x64-installer.run \
     --mode unattended \
