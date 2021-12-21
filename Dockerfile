@@ -27,7 +27,7 @@ RUN dnf install -y redhat-lsb libx11  libXext mesa-libGL && \
     rm -rf /tmp/thinkboxsetup
 
 
-COPY ./LNX/* /opt/Thinkbox/Deadline10/bin/
+#COPY ./LNX/* /opt/Thinkbox/Deadline10/bin/
 
 
 HEALTHCHECK --interval=300s --timeout=3s \
