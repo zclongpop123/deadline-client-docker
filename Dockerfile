@@ -1,4 +1,4 @@
-FROM rockylinux:8.5
+FROM rockylinux:8.6
 
 
 MAINTAINER zangchanglong
@@ -15,7 +15,7 @@ RUN mkdir /tmp/thinkboxsetup/ &&\
 COPY ./DeadlineClient-10.*-linux-x64-installer.run /tmp/thinkboxsetup/
 
 
-RUN dnf install -y redhat-lsb libx11  libXext mesa-libGL && \
+RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL && \
     chmod +x /tmp/thinkboxsetup/DeadlineClient-10.*-linux-x64-installer.run && \
     /tmp/thinkboxsetup/DeadlineClient-10.*-linux-x64-installer.run \
     --mode unattended \
