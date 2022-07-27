@@ -31,7 +31,7 @@ RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL && \
 
 
 HEALTHCHECK --interval=300s --timeout=3s \
-	    CMD curl -fs http://127.0.0.1:8082 || exit 1
+	    CMD curl -fs http://127.0.0.1:8081 || exit 1
 
 
 WORKDIR /opt/Thinkbox/Deadline10/bin/
