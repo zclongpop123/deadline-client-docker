@@ -12,5 +12,5 @@ docker build -t deadline-client .
 ```
 - 运行 Web Service
 ```
-docker run -v /opt/Thinkbox/DeadlineRepository10:/mnt/DeadlineRepository10 -p 8081:8081 deadline-client ./deadlinewebservice
+docker run -d -v /opt/Thinkbox/DeadlineRepository10:/mnt/DeadlineRepository10 -p 8081:8081 deadline-client ./deadlinewebservice
 ```
