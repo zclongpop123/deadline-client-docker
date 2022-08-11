@@ -1,11 +1,9 @@
-How To Use
+Deadline Client Docker
 --
  - 克隆仓库
 ```bash
 git clone https://github.com/zclongpop123/deadline-client-docker.git
 ```
-- 复制DeadlineClient安装包到当前目录
-
 - 构建镜像
 ```bash
 docker build -t deadline-client .
