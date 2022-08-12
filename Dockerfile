@@ -9,7 +9,7 @@ RUN sed -e 's|^mirrorlist=|#mirrorlist=|g' \
     mkdir /tmp/thinkboxsetup/
 
 
-COPY ./DeadlineClient-10.*-linux-x64-installer.run /tmp/thinkboxsetup/
+COPY DeadlineClient-10.*-linux-x64-installer.run /tmp/thinkboxsetup/
 
 
 RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL && \
