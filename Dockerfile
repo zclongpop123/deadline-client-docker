@@ -32,3 +32,5 @@ RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL supervisor && \
     --restartstalled true  && \
     rm -rf /tmp/thinkboxsetup
 
+EXPOSE 8080 8081
+
