@@ -21,7 +21,7 @@ RUN  mkdir /tmp/thinkboxsetup/
 COPY DeadlineClient-10.*-linux-x64-installer.run /tmp/thinkboxsetup/
 
 
-RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL && \
+RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL supervisor && \
     chmod +x /tmp/thinkboxsetup/DeadlineClient-10.*-linux-x64-installer.run && \
     /tmp/thinkboxsetup/DeadlineClient-10.*-linux-x64-installer.run \
     --mode unattended \
@@ -32,7 +32,3 @@ RUN dnf install -y redhat-lsb libX11  libXext mesa-libGL && \
     --restartstalled true  && \
     rm -rf /tmp/thinkboxsetup
 
-
-ENV PATH $PATH:/opt/Thinkbox/Deadline10/bin
-
-WORKDIR /opt/Thinkbox/Deadline10/bin/
